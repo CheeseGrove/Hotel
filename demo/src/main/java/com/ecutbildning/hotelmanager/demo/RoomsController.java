@@ -37,9 +37,13 @@ public class RoomsController {
     }
 
     @PostMapping ("/{id}/setBooked")
-    public Rooms setBooked(@PathVariable String id, @RequestParam("bk") boolean booked) {
-        System.out.println(id);
-        return roomsService.custom(id, booked);
+    public void setBooked(@PathVariable String id, @RequestParam("bk") boolean booked) {
+        roomsService.changeBooked(id, booked);
+    }
+
+    @PostMapping("/{id}/addFruit")
+    public void addFruit(@PathVariable String id, @RequestParam("fruitlist") List<String> fruitlist){
+        roomsService.addFood(id, fruitlist);
     }
 
     @DeleteMapping("/{id}")
@@ -49,7 +53,7 @@ public class RoomsController {
 
     @DeleteMapping("/")
     public void delete(){
-        roomsService.deleteAll(roomsService.findAll());
+        roomsService.deleteAll();
     }
 
 }

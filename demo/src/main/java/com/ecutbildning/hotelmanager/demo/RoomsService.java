@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class RoomsService {
@@ -30,19 +31,35 @@ public class RoomsService {
         return roomsRepository.save(rooms);
     }
 
-    public Rooms changeBooked(String id, boolean booked){
+    public void changeBooked(String id, boolean booked){
         Rooms room = findById(id);
         room.setBooked(booked);
-        deleteById(id);
-        System.out.println();
-        return roomsRepository.save(room);
+        roomsRepository.save(room);
     }
 
     public void deleteById(String id){
         roomsRepository.deleteById(id);
     }
 
-    public void deleteAll(List<Rooms> roomsList){
-        roomsRepository.deleteAll(roomsList);
+    public void deleteAll(){
+        roomsRepository.deleteAll();
+    }
+
+    public void addFood(String id, List<String> fruitList){
+        System.out.println(fruitList);
+        Rooms room = roomsRepository.findById(id).orElseThrow(EntityNotFoundException::new);
+        System.out.println(fruitList.stream().collect(Collectors.toList()).toString());
+        room.getOrderedFood().addAll(fruitList.stream().filter(elem -> !room.getOrderedFood().contains(elem)).collect(Collectors.toList()));
+        System.out.println("Success");
+        System.out.println(fruitList.toString());
+        System.out.println(room.getOrderedFood());
+        roomsRepository.save(room);
+    }
+
+    public void removeFood(String id, List<String> fruitlist){
+        Rooms room = roomsRepository.findById(id).orElseThrow(EntityNotFoundException::new);
+        room.getOrderedFood().removeAll(room.getOrderedFood().stream().filter(fruitlist::contains).collect(Collectors.toList()));
+        roomsRepository.save(room);
+
     }
 }

@@ -7,8 +7,10 @@ import java.lang.reflect.Field;
 import java.util.ArrayList;
 
 public class Rooms{
+
     @Id
-    String id;
+    public String id;
+
     boolean booked =false;
     boolean hasAC = false;
     boolean hasFreeBreakfest = false;
@@ -17,8 +19,10 @@ public class Rooms{
     String typeOfRoom;
 
 
-    public Rooms(String choice) {
-        switch(choice.toLowerCase()) {
+    public Rooms(String typeOfRoom) {
+
+        this.typeOfRoom = typeOfRoom;
+        switch(typeOfRoom.toLowerCase()) {
             case "poorsingle":
                 this.setProperties(false, false, false, 2, 0, 150, "Poor Single Room");
                 break;
@@ -42,6 +46,7 @@ public class Rooms{
         this.daysBooked = daysBooked;
         this.chargePerDay = chargePerDay;
         this.typeOfRoom = typeOfRoom;
+        this.id = this.id;
     }
 
     public ArrayList<String> getOrderedFood() {

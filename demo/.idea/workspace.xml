@@ -2,27 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="145bd539-c498-4f4d-9f14-3ab66fe1c1b6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ecutbildning/hotelmanager/demo/RoomsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecutbildning/hotelmanager/demo/RoomsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecutbildning/hotelmanager/demo/RoomsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecutbildning/hotelmanager/demo/RoomsRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ecutbildning/hotelmanager/demo/RoomsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecutbildning/hotelmanager/demo/RoomsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecutbildning/hotelmanager/demo/ToDoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecutbildning/hotelmanager/demo/ToDoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecutbildning/hotelmanager/rooms/LuxuryDoubleRoom.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecutbildning/hotelmanager/rooms/LuxurySingleRoom.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecutbildning/hotelmanager/rooms/PoorDoubleRoom.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecutbildning/hotelmanager/rooms/PoorSingleRoom.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ecutbildning/hotelmanager/rooms/Rooms.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecutbildning/hotelmanager/rooms/Rooms.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/demo.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/demo.kotlin_module" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/ecutbildning/hotelmanager/demo/RoomsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ecutbildning/hotelmanager/demo/RoomsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ecutbildning/hotelmanager/demo/RoomsRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ecutbildning/hotelmanager/demo/RoomsRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/ecutbildning/hotelmanager/demo/RoomsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ecutbildning/hotelmanager/demo/RoomsService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ecutbildning/hotelmanager/rooms/LuxuryDoubleRoom.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ecutbildning/hotelmanager/rooms/LuxurySingleRoom.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ecutbildning/hotelmanager/rooms/PoorDoubleRoom.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ecutbildning/hotelmanager/rooms/PoorSingleRoom.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/ecutbildning/hotelmanager/rooms/Rooms.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ecutbildning/hotelmanager/rooms/Rooms.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -145,26 +130,30 @@
       <screen x="0" y="0" width="1600" height="844" />
     </state>
     <state x="534" y="170" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1600.844@0.0.1600.844" timestamp="1583836934319" />
-    <state width="1554" height="210" key="GridCell.Tab.0.bottom" timestamp="1583843819052">
+    <state width="1554" height="210" key="GridCell.Tab.0.bottom" timestamp="1583850151572">
       <screen x="0" y="0" width="1600" height="844" />
     </state>
-    <state width="1554" height="210" key="GridCell.Tab.0.bottom/0.0.1600.844@0.0.1600.844" timestamp="1583843819052" />
-    <state width="1554" height="210" key="GridCell.Tab.0.center" timestamp="1583843819052">
+    <state width="1554" height="210" key="GridCell.Tab.0.bottom/0.0.1600.844@0.0.1600.844" timestamp="1583850151572" />
+    <state width="1554" height="210" key="GridCell.Tab.0.center" timestamp="1583850151571">
       <screen x="0" y="0" width="1600" height="844" />
     </state>
-    <state width="1554" height="210" key="GridCell.Tab.0.center/0.0.1600.844@0.0.1600.844" timestamp="1583843819052" />
-    <state width="1554" height="210" key="GridCell.Tab.0.left" timestamp="1583843819052">
+    <state width="1554" height="210" key="GridCell.Tab.0.center/0.0.1600.844@0.0.1600.844" timestamp="1583850151571" />
+    <state width="1554" height="210" key="GridCell.Tab.0.left" timestamp="1583850151570">
       <screen x="0" y="0" width="1600" height="844" />
     </state>
-    <state width="1554" height="210" key="GridCell.Tab.0.left/0.0.1600.844@0.0.1600.844" timestamp="1583843819052" />
-    <state width="1554" height="210" key="GridCell.Tab.0.right" timestamp="1583843819052">
+    <state width="1554" height="210" key="GridCell.Tab.0.left/0.0.1600.844@0.0.1600.844" timestamp="1583850151570" />
+    <state width="1554" height="210" key="GridCell.Tab.0.right" timestamp="1583850151572">
       <screen x="0" y="0" width="1600" height="844" />
     </state>
-    <state width="1554" height="210" key="GridCell.Tab.0.right/0.0.1600.844@0.0.1600.844" timestamp="1583843819052" />
+    <state width="1554" height="210" key="GridCell.Tab.0.right/0.0.1600.844@0.0.1600.844" timestamp="1583850151572" />
     <state x="85" y="83" key="SettingsEditor" timestamp="1583490871956">
       <screen x="0" y="0" width="1600" height="844" />
     </state>
     <state x="85" y="83" key="SettingsEditor/0.0.1600.844@0.0.1600.844" timestamp="1583490871956" />
+    <state x="614" y="340" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1583850296691">
+      <screen x="0" y="0" width="1600" height="844" />
+    </state>
+    <state x="614" y="340" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1600.844@0.0.1600.844" timestamp="1583850296691" />
     <state x="463" y="165" width="672" height="678" key="search.everywhere.popup" timestamp="1583829571732">
       <screen x="0" y="0" width="1600" height="844" />
     </state>
