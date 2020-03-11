@@ -24,7 +24,7 @@ public class Room {
         this.typeOfRoom = typeOfRoom;
         switch(typeOfRoom.toLowerCase()) {
             case "poorsingle":
-                this.setProperties(false, false, false, 2, 0, 150, "Poor Single Room");
+                this.setProperties(false, false, false, 1, 0, 150, "Poor Single Room");
                 break;
             case "poordouble":
                 this.setProperties(false, false, false, 2, 0, 250, "Poor Double Room");
@@ -32,7 +32,7 @@ public class Room {
             case "luxurysingle":
                 this.setProperties(false, true, true, 1, 0, 1300, "Luxury Single Room");
                 break;
-            case "luxurydouble":
+            case "luxurloydouble":
                 this.setProperties(false, false, false, 4, 0, 2500, "Luxury Double Room");
                 break;
         }

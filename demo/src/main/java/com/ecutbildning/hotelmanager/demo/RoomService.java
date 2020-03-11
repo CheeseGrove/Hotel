@@ -50,11 +50,9 @@ public class RoomService {
         roomRepository.deleteAll();
     }
 
-    public void addFood(String id, ArrayList<String> fruitList){
+    public void addFood(String id, String fruit){
         Room room = roomRepository.findById(id).orElseThrow(EntityNotFoundException::new);
-        room.getOrderedFood().addAll(fruitList.stream()
-                .filter(elem -> !room.getOrderedFood().contains(elem))
-                .collect(Collectors.toList()));
+        room.getOrderedFood().add(fruit);
         roomRepository.save(room);
     }
 

@@ -24,9 +24,8 @@ public class RoomController {
         return roomService.findById(id);
     }
 
-
     @PostMapping
-    public Room create(@RequestParam("type") String type) {
+    public Room create(@RequestParam("etyp") String type) {
         return roomService.create(type);
     }
 
@@ -41,8 +40,8 @@ public class RoomController {
     }
 
     @PostMapping("/{id}/addFruit")
-    public void addFruit(@PathVariable String id, @RequestParam("fruitlist") ArrayList<String> fruitList){
-        roomService.addFood(id, fruitList);
+    public void addFruit(@PathVariable String id, @RequestParam("fruit") String fruit){
+        roomService.addFood(id, fruit);
     }
 
     @PutMapping("/{id}/setFruit")

@@ -3,10 +3,11 @@ package com.ecutbildning.hotelmanager.demo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/customers")
+@RequestMapping("/api/customer")
 public class CustomerController {
     @Autowired
     private CustomerService customerService;
@@ -31,9 +32,19 @@ public class CustomerController {
         return customerService.save(customer);
     }
 
+    @PutMapping("/{id}/setBookedRooms")
+    public Customer setBookedRooms(@PathVariable String id, ArrayList<String> bookedList){
+        return customerService.setBookedRooms(id, bookedList);
+    }
+
     @DeleteMapping("/{id}")
     public void deleteById(@PathVariable String id) {
         customerService.deleteById(id);
+    }
+
+    @DeleteMapping
+    public void deleteAll(){
+        customerService.deleteAll();
     }
 
 }

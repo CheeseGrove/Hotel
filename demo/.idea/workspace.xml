@@ -3,30 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="145bd539-c498-4f4d-9f14-3ab66fe1c1b6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecutbildning/hotelmanager/demo/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecutbildning/hotelmanager/demo/CustomerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecutbildning/hotelmanager/demo/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecutbildning/hotelmanager/demo/CustomerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ecutbildning/hotelmanager/demo/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecutbildning/hotelmanager/demo/CustomerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecutbildning/hotelmanager/demo/Customers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecutbildning/hotelmanager/demo/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecutbildning/hotelmanager/demo/CustomersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecutbildning/hotelmanager/demo/CustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecutbildning/hotelmanager/demo/RoomsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecutbildning/hotelmanager/demo/RoomController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecutbildning/hotelmanager/demo/RoomsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecutbildning/hotelmanager/demo/RoomRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecutbildning/hotelmanager/demo/RoomsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecutbildning/hotelmanager/demo/RoomService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecutbildning/hotelmanager/demo/ToDo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecutbildning/hotelmanager/demo/ToDoController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecutbildning/hotelmanager/demo/ToDoRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecutbildning/hotelmanager/demo/ToDoService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecutbildning/hotelmanager/rooms/Rooms.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecutbildning/hotelmanager/rooms/Room.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ecutbildning/hotelmanager/demo/CustomerRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ecutbildning/hotelmanager/demo/CustomerRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecutbildning/hotelmanager/demo/RoomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecutbildning/hotelmanager/demo/RoomController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecutbildning/hotelmanager/demo/RoomService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecutbildning/hotelmanager/demo/RoomService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecutbildning/hotelmanager/rooms/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecutbildning/hotelmanager/rooms/Room.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/ecutbildning/hotelmanager/demo/CustomerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ecutbildning/hotelmanager/demo/CustomerService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ecutbildning/hotelmanager/demo/Customers.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ecutbildning/hotelmanager/demo/CustomersController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ecutbildning/hotelmanager/demo/RoomsController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ecutbildning/hotelmanager/demo/RoomsRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ecutbildning/hotelmanager/demo/RoomsService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ecutbildning/hotelmanager/demo/ToDo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ecutbildning/hotelmanager/demo/ToDoController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ecutbildning/hotelmanager/demo/ToDoRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ecutbildning/hotelmanager/demo/ToDoService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ecutbildning/hotelmanager/rooms/Rooms.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ecutbildning/hotelmanager/rooms/Room.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ecutbildning/hotelmanager/rooms/Room.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,22 +135,22 @@
       <screen x="0" y="0" width="1600" height="844" />
     </state>
     <state x="534" y="170" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1600.844@0.0.1600.844" timestamp="1583922458644" />
-    <state width="1554" height="210" key="GridCell.Tab.0.bottom" timestamp="1583922585851">
+    <state width="1554" height="210" key="GridCell.Tab.0.bottom" timestamp="1583933196814">
       <screen x="0" y="0" width="1600" height="844" />
     </state>
-    <state width="1554" height="210" key="GridCell.Tab.0.bottom/0.0.1600.844@0.0.1600.844" timestamp="1583922585851" />
-    <state width="1554" height="210" key="GridCell.Tab.0.center" timestamp="1583922585850">
+    <state width="1554" height="210" key="GridCell.Tab.0.bottom/0.0.1600.844@0.0.1600.844" timestamp="1583933196814" />
+    <state width="1554" height="210" key="GridCell.Tab.0.center" timestamp="1583933196814">
       <screen x="0" y="0" width="1600" height="844" />
     </state>
-    <state width="1554" height="210" key="GridCell.Tab.0.center/0.0.1600.844@0.0.1600.844" timestamp="1583922585850" />
-    <state width="1554" height="210" key="GridCell.Tab.0.left" timestamp="1583922585849">
+    <state width="1554" height="210" key="GridCell.Tab.0.center/0.0.1600.844@0.0.1600.844" timestamp="1583933196814" />
+    <state width="1554" height="210" key="GridCell.Tab.0.left" timestamp="1583933196813">
       <screen x="0" y="0" width="1600" height="844" />
     </state>
-    <state width="1554" height="210" key="GridCell.Tab.0.left/0.0.1600.844@0.0.1600.844" timestamp="1583922585849" />
-    <state width="1554" height="210" key="GridCell.Tab.0.right" timestamp="1583922585850">
+    <state width="1554" height="210" key="GridCell.Tab.0.left/0.0.1600.844@0.0.1600.844" timestamp="1583933196813" />
+    <state width="1554" height="210" key="GridCell.Tab.0.right" timestamp="1583933196814">
       <screen x="0" y="0" width="1600" height="844" />
     </state>
-    <state width="1554" height="210" key="GridCell.Tab.0.right/0.0.1600.844@0.0.1600.844" timestamp="1583922585850" />
+    <state width="1554" height="210" key="GridCell.Tab.0.right/0.0.1600.844@0.0.1600.844" timestamp="1583933196814" />
     <state x="85" y="83" key="SettingsEditor" timestamp="1583490871956">
       <screen x="0" y="0" width="1600" height="844" />
     </state>

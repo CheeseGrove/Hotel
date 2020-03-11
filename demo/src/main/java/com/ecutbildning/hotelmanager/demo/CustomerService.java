@@ -53,6 +53,10 @@ public class CustomerService {
         return customerRepository.save(customer);
     }
 
+    public void deleteAll(){
+        customerRepository.deleteAll();
+    }
+
 
 
 }
