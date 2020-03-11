@@ -25,7 +25,7 @@ public class RoomController {
     }
 
     @PostMapping
-    public Room create(@RequestParam("etyp") String type) {
+    public Room create(@RequestParam("type") String type) {
         return roomService.create(type);
     }
 
