@@ -53,6 +53,10 @@ public class Room {
         return orderedFood;
     }
 
+    public void setChargePerDay(int value){
+        this.chargePerDay = value;
+    }
+
     public void setOrderedFood(ArrayList<String> orderedFood) {
         this.orderedFood = orderedFood;
     }

@@ -53,6 +53,7 @@ public class RoomService {
     public void addFood(String id, String fruit){
         Room room = roomRepository.findById(id).orElseThrow(EntityNotFoundException::new);
         room.getOrderedFood().add(fruit);
+        room.setChargePerDay(room.getChargePerDay() + (fruit.length() * 5));
         roomRepository.save(room);
     }
 
