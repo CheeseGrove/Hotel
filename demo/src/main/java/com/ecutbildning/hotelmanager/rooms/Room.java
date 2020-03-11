@@ -6,7 +6,7 @@ import org.springframework.data.annotation.Id;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 
-public class Rooms{
+public class Room {
 
     @Id
     public String id;
@@ -19,7 +19,7 @@ public class Rooms{
     String typeOfRoom;
 
 
-    public Rooms(String typeOfRoom) {
+    public Room(String typeOfRoom) {
 
         this.typeOfRoom = typeOfRoom;
         switch(typeOfRoom.toLowerCase()) {
@@ -87,5 +87,13 @@ public class Rooms{
 
     public String getTypeOfRoom(){
         return typeOfRoom;
+    }
+
+    public String getId(){
+        return id;
+    }
+
+    public void setId(String id){
+        this.id = id;
     }
 }

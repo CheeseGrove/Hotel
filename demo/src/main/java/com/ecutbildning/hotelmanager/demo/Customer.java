@@ -2,23 +2,34 @@ package com.ecutbildning.hotelmanager.demo;
 
 import org.springframework.data.annotation.Id;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
-public class Customers {
+public class Customer {
     @Id
     private String id;
     String bookingName;
-    String bookedRoom;
     Date arrivingDate;
     Date leavingDate;
     int numberOfPeople;
+    ArrayList<String> bookedRooms = new ArrayList<>();
 
-    public Customers(String bookingName, String bookedRoom, Date arrivingDate, Date leavingDate, int numberOfPeople) {
+
+    public Customer(String bookingName, Date arrivingDate, Date leavingDate, int numberOfPeople) {
         this.bookingName = bookingName;
-        this.bookedRoom = bookedRoom;
         this.arrivingDate = arrivingDate;
         this.leavingDate = leavingDate;
         this.numberOfPeople = numberOfPeople;
+        this.bookedRooms = bookedRooms;
+    }
+
+    public ArrayList<String> getBookedRooms() {
+        return bookedRooms;
+    }
+
+    public void setBookedRooms(ArrayList<String> bookedRooms) {
+        this.bookedRooms = bookedRooms;
     }
 
     public String getId() {
@@ -35,14 +46,6 @@ public class Customers {
 
     public void setBookingName(String bookingName) {
         this.bookingName = bookingName;
-    }
-
-    public String getBookedRoom() {
-        return bookedRoom;
-    }
-
-    public void setBookedRoom(String bookedRoom) {
-        this.bookedRoom = bookedRoom;
     }
 
     public Date getArrivingDate() {
@@ -75,10 +78,10 @@ public class Customers {
         return "Customers{" +
                 "id='" + id + '\'' +
                 ", bookingName='" + bookingName + '\'' +
-                ", bookedRoom='" + bookedRoom + '\'' +
                 ", arrivingDate=" + arrivingDate +
                 ", leavingDate=" + leavingDate +
                 ", numberOfPeople=" + numberOfPeople +
+                ", bookedRooms='" + bookedRooms + '\'' +
                 '}';
     }
 }

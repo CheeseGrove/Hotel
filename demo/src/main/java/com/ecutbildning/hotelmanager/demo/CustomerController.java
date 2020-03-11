@@ -7,27 +7,27 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/customers")
-public class CustomersController {
+public class CustomerController {
     @Autowired
     private CustomerService customerService;
 
     @GetMapping("/all")
-    public List<Customers> findAll() {
+    public List<Customer> findAll() {
         return customerService.findAll();
     }
 
     @GetMapping("/{id}")
-    public Customers findById(@PathVariable String id) {
+    public Customer findById(@PathVariable String id) {
         return customerService.findById(id);
     }
 
     @PostMapping
-    public Customers create(@RequestBody Customers customer) {
+    public Customer create(@RequestBody Customer customer) {
         return customerService.save(customer);
     }
 
     @PostMapping("/{id}")
-    public Customers update(@RequestBody Customers customer) {
+    public Customer update(@RequestBody Customer customer) {
         return customerService.save(customer);
     }
 
