@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 @Service
@@ -30,6 +31,9 @@ public class CustomerService {
     }
 
     public Customer save(Customer c) {
+        long diff = c.leavingDate.getTime() - c.getArrivingDate().getTime();
+        int days = (int) TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
+        roomRepository.findById(c.getBookedRooms().get(0).toString()).ifPresent((room) -> c.setBillToPay(room.getChargePerDay() * days));
         return customerRepository.save(c);
     }
 
