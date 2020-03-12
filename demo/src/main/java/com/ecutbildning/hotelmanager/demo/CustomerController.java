@@ -1,6 +1,7 @@
 package com.ecutbildning.hotelmanager.demo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -23,7 +24,7 @@ public class CustomerController {
     }
 
     @PostMapping
-    public Customer create(@RequestBody Customer customer) {
+    public Customer create(@DateTimeFormat(pattern = "yyyy-MM-dd") @RequestBody Customer customer ) {
         return customerService.save(customer);
     }
 
@@ -35,6 +36,11 @@ public class CustomerController {
     @PutMapping("/{id}/setBookedRooms")
     public Customer setBookedRooms(@PathVariable String id, ArrayList<String> bookedList){
         return customerService.setBookedRooms(id, bookedList);
+    }
+
+    @PutMapping("/{id}/addBookedRooms")
+    public Customer addBookedRooms(@PathVariable String id, String roomID){
+        return customerService.addBookedRooms(id, roomID);
     }
 
     @DeleteMapping("/{id}")

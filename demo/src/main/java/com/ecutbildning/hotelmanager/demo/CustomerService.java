@@ -31,11 +31,9 @@ public class CustomerService {
     }
 
 
-    public Customer addBookedRooms (String id, ArrayList<String> roomList){
+    public Customer addBookedRooms (String id, String roomID){
         Customer customer = customerRepository.findById(id).orElseThrow(EntityNotFoundException::new);
-        customer.getBookedRooms().addAll(roomList.stream()
-                .filter(elem -> !customer.getBookedRooms().contains(elem))
-                .collect(Collectors.toList()));
+        customer.getBookedRooms().add(roomID);
         return customerRepository.save(customer);
     }
 
