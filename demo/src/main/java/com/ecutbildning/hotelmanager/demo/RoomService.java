@@ -74,7 +74,7 @@ public class RoomService {
 
     public void removeBooking(String roomID){
         List<Customer> custlist = customerRepository.findAll();
-        Customer customer = custlist.stream().filter(customer -> customer.getId().equals(roomID)).collect(Collectors.toList()).get(0);
+        Customer customer = custlist.stream().filter(c -> c.getId().equals(roomID)).collect(Collectors.toList()).get(0);
         customer.getBookedRooms().clear();
         customerRepository.save(customer);
     }
