@@ -60,7 +60,7 @@ public class RoomController {
     }
 
     @DeleteMapping("/{id}/removeBookings")
-            public void removeBooking(@PathVariable String id){
+    public void removeBooking(@PathVariable String id){
         roomService.removeBooking(id);
     }
 
