@@ -14,6 +14,7 @@ public class Customer {
     Date arrivingDate;
     Date leavingDate;
     int numberOfPeople;
+    int billToPay;
     ArrayList<String> bookedRooms = new ArrayList<>();
 
 
@@ -23,7 +24,10 @@ public class Customer {
         this.leavingDate = leavingDate;
         this.numberOfPeople = numberOfPeople;
         this.bookedRooms = bookedRooms;
+        this.billToPay = 0;
     }
+
+
 
     public ArrayList<String> getBookedRooms() {
         return bookedRooms;
@@ -73,6 +77,13 @@ public class Customer {
         this.numberOfPeople = numberOfPeople;
     }
 
+    public int getBillToPay() {
+        return billToPay;
+    }
+
+    public void setBillToPay(int billToPay) {
+        this.billToPay = billToPay;
+    }
 
     @Override
     public String toString() {
