@@ -1,5 +1,6 @@
 package com.ecutbildning.hotelmanager.demo;
 
+import jdk.jfr.Frequency;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
@@ -39,7 +40,7 @@ public class CustomerController {
     }
 
     @PutMapping("/{id}/addBookedRooms")
-    public Customer addBookedRooms(@PathVariable String id, String roomID){
+    public Customer addBookedRooms(@PathVariable String id, @RequestParam String roomID){
         return customerService.addBookedRooms(id, roomID);
     }
 

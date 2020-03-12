@@ -14,6 +14,7 @@ public class RoomService {
 
     @Autowired
     public RoomRepository roomRepository;
+    public CustomerRepository customerRepository;
 
     public List<Room> findAll(){
         return roomRepository.findAll();
@@ -69,6 +70,13 @@ public class RoomService {
         Room room = roomRepository.findById(id).orElseThrow(EntityNotFoundException::new);
         room.getOrderedFood().removeAll(room.getOrderedFood());
         roomRepository.save(room);
+    }
+
+    public void removeBooking(String roomID){
+        List<Customer> custlist = customerRepository.findAll();
+        Customer customer = custlist.stream().filter(customer -> customer.getId().equals(roomID)).collect(Collectors.toList()).get(0);
+        customer.getBookedRooms().clear();
+        customerRepository.save(customer);
     }
 
     public void setFood(String id, ArrayList<String> fruitlist){

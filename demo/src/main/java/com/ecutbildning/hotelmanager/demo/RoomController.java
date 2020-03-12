@@ -59,6 +59,11 @@ public class RoomController {
         roomService.removeAllFood(id);
     }
 
+    @DeleteMapping("/{id}/removeBookings")
+            public void removeBooking(@PathVariable String id){
+        roomService.removeBooking(id);
+    }
+
     @DeleteMapping("/{id}")
     public void deleteById(@PathVariable String id) {
         roomService.deleteById(id);
