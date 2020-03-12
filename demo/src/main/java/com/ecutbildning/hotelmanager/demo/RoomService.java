@@ -65,9 +65,16 @@ public class RoomService {
         roomRepository.save(room);
     }
 
+    public void removeAllFood(String id){
+        Room room = roomRepository.findById(id).orElseThrow(EntityNotFoundException::new);
+        room.getOrderedFood().removeAll(room.getOrderedFood());
+        roomRepository.save(room);
+    }
+
     public void setFood(String id, ArrayList<String> fruitlist){
         Room room = roomRepository.findById(id).orElseThrow(EntityNotFoundException::new);
         room.setOrderedFood(fruitlist);
 
     }
+
 }
