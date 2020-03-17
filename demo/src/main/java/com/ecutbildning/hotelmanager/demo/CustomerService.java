@@ -34,17 +34,20 @@ public class CustomerService {
     public Customer create (Customer c){
         long diff = c.getLeavingDate().getTime() - c.getArrivingDate().getTime();
         c.setDaysStaying((int) TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS));
-
-        Room room = roomRepository.
-                findById(c.getBookedRooms().stream().findFirst().orElseThrow(EntityNotFoundException::new))
-                .orElseThrow(EntityNotFoundException::new);
-        room.setDaysBooked(c.getDaysStaying());
-        room.updateTotalCost();
-        room.setBooked(true);
-        room.setTotalCost(room.getTotalCost() * room.getChargePerDay());
-        roomRepository.save(room);
-        c.setBillToPay(room.getTotalCost());
-        return customerRepository.save(c);
+        if(c.getBookedRooms().isEmpty()) {
+            return customerRepository.save(c);
+        } else {
+            Room room = roomRepository.
+                    findById(c.getBookedRooms().stream().findFirst().orElseThrow(EntityNotFoundException::new))
+                    .orElseThrow(EntityNotFoundException::new);
+            room.setDaysBooked(c.getDaysStaying());
+            room.updateTotalCost();
+            room.setBooked(true);
+            room.setTotalCost(room.getTotalCost() * room.getChargePerDay());
+            roomRepository.save(room);
+            c.setBillToPay(room.getTotalCost());
+            return customerRepository.save(c);
+        }
     }
 
     public Customer save (Customer c) {
