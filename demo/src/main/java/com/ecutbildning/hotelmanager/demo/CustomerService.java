@@ -31,20 +31,22 @@ public class CustomerService {
         return customerRepository.findById(id).orElseThrow(EntityNotFoundException::new);
     }
 
-    public Customer save(Customer c) {
+    public Customer create (Customer c){
         long diff = c.getLeavingDate().getTime() - c.getArrivingDate().getTime();
         c.setDaysStaying((int) TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS));
-        if(roomRepository.findById(c.getBookedRooms().stream().findFirst().toString()).isPresent()) {
-            Room room = roomRepository.
-                    findById(c.getBookedRooms().stream().findFirst().orElseThrow(EntityNotFoundException::new))
-                    .orElseThrow(EntityNotFoundException::new);
-            room.setDaysBooked(c.getDaysStaying());
-            room.updateTotalCost();
-            room.setBooked(true);
-            roomRepository.save(room);
-            room.setTotalCost(5000);
-            return customerRepository.save(c);
-        }
+
+        Room room = roomRepository.
+                findById(c.getBookedRooms().stream().findFirst().orElseThrow(EntityNotFoundException::new))
+                .orElseThrow(EntityNotFoundException::new);
+        room.setDaysBooked(c.getDaysStaying());
+        room.updateTotalCost();
+        room.setBooked(true);
+        roomRepository.save(room);
+        room.setTotalCost(5000);
+        return customerRepository.save(c);
+    }
+
+    public Customer save (Customer c) {
 
         return customerRepository.save(c);
     }

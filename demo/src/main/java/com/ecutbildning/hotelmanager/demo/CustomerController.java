@@ -27,8 +27,9 @@ public class CustomerController {
 
     @PostMapping
     public Customer create(@DateTimeFormat(pattern = "yyyy-MM-dd") @RequestBody Customer customer ) {
-        return customerService.save(customer);
+        return customerService.create(customer);
     }
+
 
     @PostMapping("/{id}")
     public Customer update(@RequestBody Customer customer) {
