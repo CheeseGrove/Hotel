@@ -33,7 +33,7 @@ public class Room {
             case "luxurysingle":
                 this.setProperties(false, true, true, 1, 0, 1300, "Luxury Single Room");
                 break;
-            case "luxurloydouble":
+            case "luxurydouble":
                 this.setProperties(false, false, false, 4, 0, 2500, "Luxury Double Room");
                 break;
         }
