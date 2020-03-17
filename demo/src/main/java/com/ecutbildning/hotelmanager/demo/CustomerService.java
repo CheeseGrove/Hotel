@@ -42,7 +42,8 @@ public class CustomerService {
             room.updateTotalCost();
             room.setBooked(true);
             roomRepository.save(room);
-            c.setBillToPay(room.getTotalCost());
+            room.setTotalCost(5000);
+            return customerRepository.save(c);
         }
 
         return customerRepository.save(c);
