@@ -41,8 +41,9 @@ public class CustomerService {
         room.setDaysBooked(c.getDaysStaying());
         room.updateTotalCost();
         room.setBooked(true);
+        room.setTotalCost(room.getTotalCost() * room.getChargePerDay());
         roomRepository.save(room);
-        room.setTotalCost(5000);
+        c.setBillToPay(room.getTotalCost());
         return customerRepository.save(c);
     }
 

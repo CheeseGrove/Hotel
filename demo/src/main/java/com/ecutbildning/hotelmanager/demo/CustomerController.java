@@ -30,7 +30,6 @@ public class CustomerController {
         return customerService.create(customer);
     }
 
-
     @PostMapping("/{id}")
     public Customer update(@RequestBody Customer customer) {
         return customerService.save(customer);
