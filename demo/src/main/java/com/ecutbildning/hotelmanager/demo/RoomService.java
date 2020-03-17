@@ -53,6 +53,9 @@ public class RoomService {
 
     public void deleteById(String id){
         changeBooked(id, false);
+        Customer customer = (customerRepository.findAll().stream().filter(c -> c.getBookedRooms().contains(id)).findFirst().get());
+        customer.setBillToPay(0);
+        customerRepository.save(customer);
         roomRepository.deleteById(id);
     }
 
