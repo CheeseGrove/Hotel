@@ -5,6 +5,7 @@ import com.ecutbildning.hotelmanager.rooms.Room;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -32,35 +33,44 @@ public class CustomerService {
 
     public Customer save(Customer c) {
         long diff = c.leavingDate.getTime() - c.getArrivingDate().getTime();
-        int days = (int) TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
-        roomRepository.findById(c.getBookedRooms().get(0).toString()).ifPresent((room) -> c.setBillToPay(room.getChargePerDay() * days));
+        c.setDaysStaying((int) TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS));
+        Room room = roomRepository.
+                findById(c.getBookedRooms().stream().findFirst().orElseThrow(EntityNotFoundException::new))
+                .orElseThrow(EntityNotFoundException::new);
+        room.setDaysBooked(c.getDaysStaying());
+        room.updateTotalCost();
+        room.setBooked(true);
+        roomRepository.save(room);
+        c.setBillToPay(room.getTotalCost());
         return customerRepository.save(c);
     }
 
     public void deleteById(String id) {
         Customer customer = customerRepository.findById(id).orElseThrow(EntityNotFoundException::new);
-        customer.getBookedRooms().stream().forEach(roomID -> roomService.changeBooked(roomID, false));
+        customer.getBookedRooms().forEach(roomID -> {
+            roomService.changeBooked(roomID, false);
+        });
         customerRepository.deleteById(id);
     }
 
 
     public Customer addBookedRooms (String id, String roomID){
         Customer customer = customerRepository.findById(id).orElseThrow(EntityNotFoundException::new);
-        customer.getBookedRooms().add(roomID);
         Room room = roomRepository.findById(roomID).orElseThrow(EntityNotFoundException::new);
-        customer.setBillToPay(
-                customer.getBillToPay()
-                + Math.toIntExact(customer.getLeavingDate().getTime() - customer.getArrivingDate().getTime())
-                * room.getChargePerDay()
-        );
+        room.setDaysBooked((int) ChronoUnit.DAYS.between(customer.getArrivingDate().toInstant(), customer.getLeavingDate().toInstant()));
+        room.setTotalCost(room.getDaysBooked() * room.getChargePerDay() + room.getFruitCharge());
+        room.setBooked(true);
+        roomRepository.save(room);
+        customer.getBookedRooms().add(room.getId());
+        customer.setBillToPay(customer.getBillToPay() + room.getTotalCost());
         return customerRepository.save(customer);
     }
 
-    public Customer removeBookedRooms (String id, ArrayList<String> roomList){
+    public Customer removeBookedRooms (String id, String roomID){
         Customer customer = customerRepository.findById(id).orElseThrow(EntityNotFoundException::new);
-        customer.getBookedRooms().addAll(roomList.stream()
-                .filter(roomList::contains)
-                .collect(Collectors.toList()));
+        Room room = roomRepository.findById(id).orElseThrow(EntityNotFoundException::new);
+        customer.setBillToPay(customer.getBillToPay() - room.getTotalCost());
+        roomService.changeBooked(room.getId(), false);
         return customerRepository.save(customer);
     }
 
@@ -72,6 +82,7 @@ public class CustomerService {
 
     public void deleteAll(){
         customerRepository.deleteAll();
+        roomRepository.findAll().forEach(room -> roomService.changeBooked(room.getId(), false));
     }
 
 

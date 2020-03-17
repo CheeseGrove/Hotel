@@ -14,9 +14,10 @@ public class Room {
     boolean booked =false;
     boolean hasAC = false;
     boolean hasFreeBreakfest = false;
-    int numberOfBeds, daysBooked, chargePerDay;
+    int numberOfBeds, daysBooked, chargePerDay, fruitCharge, totalCost;
     ArrayList<String> orderedFood = new ArrayList<>();
     String typeOfRoom;
+
 
 
     public Room(String typeOfRoom) {
@@ -99,5 +100,29 @@ public class Room {
 
     public void setId(String id){
         this.id = id;
+    }
+
+    public int getFruitCharge() {
+        return fruitCharge;
+    }
+
+    public void setFruitCharge(int fruitCharge) {
+        this.fruitCharge = fruitCharge;
+    }
+
+    public int getTotalCost() {
+        return totalCost;
+    }
+
+    public void setTotalCost(int totalCost) {
+        this.totalCost = totalCost;
+    }
+
+    public void updateTotalCost(){
+        this.totalCost = this.fruitCharge + (this.daysBooked * this.chargePerDay);
+    }
+
+    public void setDaysBooked(int daysBooked) {
+        this.daysBooked = daysBooked;
     }
 }

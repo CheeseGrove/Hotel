@@ -13,6 +13,7 @@ public class Customer {
     String bookingName;
     Date arrivingDate;
     Date leavingDate;
+    int daysStaying;
     int numberOfPeople;
     int billToPay;
     ArrayList<String> bookedRooms = new ArrayList<>();
@@ -23,11 +24,16 @@ public class Customer {
         this.arrivingDate = arrivingDate;
         this.leavingDate = leavingDate;
         this.numberOfPeople = numberOfPeople;
-        this.bookedRooms = bookedRooms;
         this.billToPay = 0;
     }
 
+    public int getDaysStaying() {
+        return daysStaying;
+    }
 
+    public void setDaysStaying(int daysStaying) {
+        this.daysStaying = daysStaying;
+    }
 
     public ArrayList<String> getBookedRooms() {
         return bookedRooms;

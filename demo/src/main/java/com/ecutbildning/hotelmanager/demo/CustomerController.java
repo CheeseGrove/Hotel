@@ -40,9 +40,14 @@ public class CustomerController {
         return customerService.setBookedRooms(id, bookedList);
     }
 
-    @PutMapping("/{id}/addBookedRooms")
+    @PostMapping("/{id}/addBookedRooms")
     public Customer addBookedRooms(@PathVariable String id, @RequestParam String roomID){
         return customerService.addBookedRooms(id, roomID);
+    }
+
+    @DeleteMapping("/{id}/deleteBookedRooms")
+    public Customer removeBookedRooms(@PathVariable String id, @RequestParam String roomID){
+        return customerService.removeBookedRooms(id, roomID);
     }
 
     @DeleteMapping("/{id}")
