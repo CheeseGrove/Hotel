@@ -57,7 +57,11 @@ public class CustomerService {
     public void deleteById(String id) {
         Customer customer = customerRepository.findById(id).orElseThrow(EntityNotFoundException::new);
         customer.getBookedRooms().forEach(roomID -> {
-            roomService.changeBooked(roomID, false);
+            try {
+                roomService.changeBooked(roomID, false);
+            } catch (Exception e) {
+                System.out.println("No such room");
+            }
         });
         customerRepository.deleteById(id);
     }

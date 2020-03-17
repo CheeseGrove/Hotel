@@ -40,7 +40,7 @@ public class RoomService {
 
 
     public Room changeBooked(String id, boolean booked){
-        Room room = findById(id);
+        Room room = roomRepository.findById(id).orElseThrow(EntityNotFoundException::new);
         room.setBooked(booked);
         if(!booked){
             room.setDaysBooked(0);
