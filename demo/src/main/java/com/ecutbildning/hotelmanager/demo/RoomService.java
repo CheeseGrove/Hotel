@@ -86,7 +86,11 @@ public class RoomService {
         Room room = roomRepository.findById(id).orElseThrow(EntityNotFoundException::new);
         room.getOrderedFood().removeAll(room.getOrderedFood());
         room.setFruitCharge(0);
+        room.setTotalCost(updateRoomCost(room));
         roomRepository.save(room);
+        Customer customer = customerRepository.findAll().stream().filter(c -> c.getBookedRooms().contains(room.getId())).findFirst().orElseThrow(EntityNotFoundException::new);
+        customer.setBillToPay(updateCustomerCost(customer));
+        customerRepository.save(customer);
     }
 
     public void removeBooking(String roomID){
