@@ -51,12 +51,14 @@ public class RoomService {
         return roomRepository.save(room);
     }
 
-    public void deleteById(String id){
-        changeBooked(id, false);
-        Customer customer = customerRepository.findAll().stream().filter(c -> c.getBookedRooms().contains(id)).findFirst().get();
-        customer.getBookedRooms().remove(id);
-        customer.setBillToPay(updateCustomerCost(customer));
-        customerRepository.save(customer);
+    public void deleteById(String id) {
+        Room room = roomRepository.findById(id).orElseThrow(EntityNotFoundException::new);
+        if (room.getBooked()){
+            Customer customer = customerRepository.findAll().stream().filter(c -> c.getBookedRooms().contains(id)).findFirst().get();
+            customer.getBookedRooms().remove(id);
+            customer.setBillToPay(updateCustomerCost(customer));
+         customerRepository.save(customer);
+        }
         roomRepository.deleteById(id);
     }
 
