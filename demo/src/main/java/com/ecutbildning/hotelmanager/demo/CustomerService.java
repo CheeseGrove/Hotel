@@ -32,16 +32,19 @@ public class CustomerService {
     }
 
     public Customer save(Customer c) {
-        long diff = c.leavingDate.getTime() - c.getArrivingDate().getTime();
+        long diff = c.getLeavingDate().getTime() - c.getArrivingDate().getTime();
         c.setDaysStaying((int) TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS));
-        Room room = roomRepository.
-                findById(c.getBookedRooms().stream().findFirst().orElseThrow(EntityNotFoundException::new))
-                .orElseThrow(EntityNotFoundException::new);
-        room.setDaysBooked(c.getDaysStaying());
-        room.updateTotalCost();
-        room.setBooked(true);
-        roomRepository.save(room);
-        c.setBillToPay(room.getTotalCost());
+        if(roomRepository.findById(c.getBookedRooms().stream().findFirst().toString()).isPresent()) {
+            Room room = roomRepository.
+                    findById(c.getBookedRooms().stream().findFirst().orElseThrow(EntityNotFoundException::new))
+                    .orElseThrow(EntityNotFoundException::new);
+            room.setDaysBooked(c.getDaysStaying());
+            room.updateTotalCost();
+            room.setBooked(true);
+            roomRepository.save(room);
+            c.setBillToPay(room.getTotalCost());
+        }
+
         return customerRepository.save(c);
     }
 
